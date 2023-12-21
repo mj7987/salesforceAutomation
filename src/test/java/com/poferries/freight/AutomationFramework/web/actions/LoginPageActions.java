@@ -1,5 +1,7 @@
 package com.poferries.freight.AutomationFramework.web.actions;
 
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
@@ -9,8 +11,12 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -209,32 +215,35 @@ public class LoginPageActions {
 	}
 
 	public void clickaccountfield() throws Throwable {
+
 		try {
-			 WebElement accountField = wait.until(ExpectedConditions.elementToBeClickable(loginPageLocators.AccoutField));
 
-		        // Click the account field
-		        utitlitymethods.javaScriptExecutorClick(accountField);
+			WebElement accountField = wait
+					.until(ExpectedConditions.elementToBeClickable(loginPageLocators.AccoutField));
 
-		        
-		        
-		        // Wait for the select_testa_account element to be clickable
-		        WebElement selectAccount = wait.until(ExpectedConditions.elementToBeClickable(loginPageLocators.select_testa_account));
+			// Click the account field
+			utitlitymethods.javaScriptExecutorClick(accountField);
 
-		        // Click the select_testa_account element
-		        utitlitymethods.javaScriptExecutorClick(selectAccount);
-		    } catch (TimeoutException e) {
-		        // Handle the TimeoutException or log a message if needed
-		        System.out.println("TimeoutException: Account field or select_testa_account not clickable within the specified timeout.");
-		        e.printStackTrace();
-		    } catch (Exception e) {
-		        // Handle other exceptions if needed
-		        e.printStackTrace();
-		    }
+			// Wait for the select_testa_account element to be clickable
+			WebElement selectAccount = wait
+					.until(ExpectedConditions.elementToBeClickable(loginPageLocators.select_testa_account));
+
+			// Click the select_testa_account element
+			utitlitymethods.javaScriptExecutorClick(selectAccount);
+		} catch (TimeoutException e) {
+			// Handle the TimeoutException or log a message if needed
+			System.out.println(
+					"TimeoutException: Account field or select_testa_account not clickable within the specified timeout.");
+			e.printStackTrace();
+		} catch (Exception e) {
+			// Handle other exceptions if needed
+			e.printStackTrace();
+		}
 //		utitlitymethods.javaScriptExecutorClick(loginPageLocators.AccoutField);
 //	//	loginPageLocators.AccoutField.click();
 //		Thread.sleep(5000);
 //		
-		//loginPageLocators.select_testa_account.click();
+		// loginPageLocators.select_testa_account.click();
 	}
 
 	public void clickSaveBUtton() throws Throwable {
@@ -280,8 +289,8 @@ public class LoginPageActions {
 
 	public void clickAccountLink() throws Throwable {
 
-		//utitlitymethods
-			//	.javaScriptExecutorClick(wait.until(ExpectedConditions.visibilityOf(loginPageLocators.Account_link)));
+		// utitlitymethods
+		// .javaScriptExecutorClick(wait.until(ExpectedConditions.visibilityOf(loginPageLocators.Account_link)));
 		utitlitymethods.javaScriptExecutorClick(loginPageLocators.Account_link);
 		// SeleniumDriver.getDriver().switchTo().defaultContent();
 		// Thread.sleep(8000);

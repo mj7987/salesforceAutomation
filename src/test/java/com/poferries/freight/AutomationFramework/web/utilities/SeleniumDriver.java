@@ -66,11 +66,11 @@ public class SeleniumDriver {
 
 		// Set desirable options, e.g.
 		ChromeOptions options = new ChromeOptions();
-		options.addArguments("--incognito");
+		options.addArguments("--disable-notifications"); // Disable notifications
+        options.addArguments("--disable-geolocation");
 		options.addArguments("â€“-disable-application-cache");
 		options.addArguments("--disable-default-apps");
 		options.addArguments("--disable-infobars");
-		options.addArguments("--disable-popup-blocking");
 		options.addArguments("--ignore-certificate-errors");
 		options.addArguments("--no-sandbox");
 		options.addArguments("--window-size=1920,1080");
