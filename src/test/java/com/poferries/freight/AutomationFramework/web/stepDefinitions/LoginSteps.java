@@ -63,9 +63,16 @@ public class LoginSteps {
 //		loginPageActions.enterUserName1(userName);
 //	}
 
-	@And("I enter the password in the password edit Box")
-	public void i_enter_the_in_the_password_edit_Box() throws Throwable {
+//	@And("I enter the password in the password edit Box")
+//	public void i_enter_the_in_the_password_edit_Box() throws Throwable {
+//		loginPageActions.enterPassword();
+//	}
+	
+	@When("I enter the {string} in the password edit Box")
+	public void i_enter_the_in_the_password_edit_box(String string) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
 		loginPageActions.enterPassword();
+	   
 	}
 
 	/*

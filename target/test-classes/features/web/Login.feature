@@ -15,7 +15,7 @@ Feature: Signing in to Web with correct account details
     #When I enter the userName in the username edit Box
     #When I enter the <userName> in the username edit Box
     When I enter "<userName>" in userName Box
-    And I enter the password in the password edit Box
+    And I enter the "<password>" in the password edit Box
     And I click the LogIn button
     # And I click on dont lose access close button
     And I click on dashBoard link
@@ -43,5 +43,5 @@ Feature: Signing in to Web with correct account details
     # And I click the LogOut Link
     # And I verify navigation to the Landing Page
     Examples: 
-      | userName                  | password    |
-      | tcsitltd41-tnbh@force.com | kpk8910123@ |
+      | userName                   | password    |
+      | holoschool1-c5qt@force.com | Kpk8910123@ |
