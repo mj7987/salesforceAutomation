@@ -12,8 +12,9 @@ Feature: Signing in to Web with correct account details
   
   Scenario Outline: LogIn and Logout with Valid Credentials
   
-    When I enter the userName in the username edit Box
-    #   When I enter the "<UserName>" in the username edit Box
+    #When I enter the userName in the username edit Box
+    #When I enter the <userName> in the username edit Box
+    When I enter "<userName>" in userName Box
     And I enter the password in the password edit Box
     And I click the LogIn button
     # And I click on dont lose access close button

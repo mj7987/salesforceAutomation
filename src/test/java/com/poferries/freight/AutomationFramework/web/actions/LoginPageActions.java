@@ -73,7 +73,7 @@ public class LoginPageActions {
 
 	// method to enter the username
 	public void enterUserName1(String username) throws Throwable {
-		Thread.sleep(7000);
+//		Thread.sleep(7000);
 		loginPageLocators.userNameEdit.sendKeys(username);
 	}
 

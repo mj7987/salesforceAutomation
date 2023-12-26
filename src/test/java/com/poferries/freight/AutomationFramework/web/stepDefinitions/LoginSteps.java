@@ -52,21 +52,27 @@ public class LoginSteps {
 		loginPageActions.enterUserName();
 	}
 
-	@When("I enter the \"([^\"]*)\" in the username edit Box")
-	public void i_enter_the_in_the_username_edit_Box(String userName) throws Throwable {
+	@When("I enter {string} in userName Box")
+	public void i_enter_in_user_name_box(String userName) throws Throwable {
 		loginPageActions.enterUserName1(userName);
+		
 	}
+
+//	@When("I enter the (.*) in the username edit Box")
+//	public void i_enter_the_in_the_username_edit_Box(String userName) throws Throwable {
+//		loginPageActions.enterUserName1(userName);
+//	}
 
 	@And("I enter the password in the password edit Box")
 	public void i_enter_the_in_the_password_edit_Box() throws Throwable {
 		loginPageActions.enterPassword();
 	}
-/*
-	@And("I enter the \"([^\"]*)\" in the password edit Box")
-	public void i_enter_the_in_the_password_edit_Box(String password) throws Throwable {
-		loginPageActions.enterPassword(password);
-	}
-*/
+
+	/*
+	 * @And("I enter the \"([^\"]*)\" in the password edit Box") public void
+	 * i_enter_the_in_the_password_edit_Box(String password) throws Throwable {
+	 * loginPageActions.enterPassword(password); }
+	 */
 	@And("I click the LogIn button")
 	public void i_click_the_LogIn_button() throws Throwable {
 		loginPageActions.clickLogin();
@@ -81,13 +87,14 @@ public class LoginSteps {
 	public void close_button1() throws Throwable {
 		loginPageActions.clickcloseButton();
 	}
+
 	@And("I click on newDashboard link")
 	public void newDashboard_link() throws Throwable {
 		loginPageActions.clickNewDashboardlink();
 	}
 
 	@And("I click on close button")
-	public void close_button() throws Throwable{
+	public void close_button() throws Throwable {
 		loginPageActions.clickCloseButton();
 	}
 
@@ -112,11 +119,12 @@ public class LoginSteps {
 	}
 
 	@Then("Verify Success Contact \"([^\"]*)\"\"([^\"]*)\" was created Close")
-	public void verify_Success_Contact_lemon_hanson_was_created_Close(String FirstName, String LastName) throws Throwable {
-		String actualToastMsg=loginPageActions.generticmethod();
-		String expectedToastMsg= "Contact \"Mr. "+FirstName+" "+LastName+"\" was created.";
-		System.out.println("Actual toast message is:-"+actualToastMsg);
-		System.out.println("Expected toast message is:-"+expectedToastMsg);
+	public void verify_Success_Contact_lemon_hanson_was_created_Close(String FirstName, String LastName)
+			throws Throwable {
+		String actualToastMsg = loginPageActions.generticmethod();
+		String expectedToastMsg = "Contact \"Mr. " + FirstName + " " + LastName + "\" was created.";
+		System.out.println("Actual toast message is:-" + actualToastMsg);
+		System.out.println("Expected toast message is:-" + expectedToastMsg);
 		Assert.assertEquals(actualToastMsg, expectedToastMsg);
 		System.out.println("Verified the actual and expected message...");
 
@@ -131,6 +139,7 @@ public class LoginSteps {
 	public void clickSignOutLink() throws Throwable {
 		loginPageActions.clickSignOutLink();
 	}
+
 	@And("I click on accout link")
 	public void click_Account_link() throws Throwable {
 		loginPageActions.clickAccountLink();
@@ -206,12 +215,10 @@ public class LoginSteps {
 			@SuppressWarnings("unused")
 			String password = list.get(i);
 
-
-
 			// first clear the password and enter the invalid password and then
 			// click Login
 			loginPageActions.clearPassword();
-		//	loginPageActions.enterPassword(password);
+			// loginPageActions.enterPassword(password);
 			loginPageActions.clickLogin();
 
 			// ensure that the validation error message is displayed
