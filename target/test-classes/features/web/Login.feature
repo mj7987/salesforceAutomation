@@ -9,9 +9,7 @@ Feature: Signing in to Web with correct account details
   #  And I verfy navigation to the Account holders Page
   #  And I click the PayAndGo SignIn Link
   #  And I verify navigation to the Login page
-  
   Scenario Outline: LogIn and Logout with Valid Credentials
-  
     #When I enter the userName in the username edit Box
     #When I enter the <userName> in the username edit Box
     When I enter "<userName>" in userName Box
@@ -30,7 +28,7 @@ Feature: Signing in to Web with correct account details
     And Enter data in firstname input field
     And Enter data in lastname input field
     And I click on account field
-	  And I click on save button on new contact
+    And I click on save button on new contact
     #Then Verify Success Contact "<FirstName>""<lastName>" was created Close
     And I click on profile image icon
     Then Verify signOut button is displayed or not
